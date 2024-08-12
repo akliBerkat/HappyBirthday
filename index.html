@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday!</title>
+    <title>Joyeux Anniversaire !</title>
     <style>
         body {
             margin: 0;
@@ -11,13 +11,14 @@
             background: linear-gradient(to bottom, #f0f8f4, #d3e4c7);
             color: #333;
             text-align: center;
+            overflow: hidden; /* Prevent scrollbars from appearing when the image is full screen */
         }
 
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: calc(100vh - 60px); /* Adjust for button height */
             padding: 20px;
         }
 
@@ -27,6 +28,8 @@
             padding: 30px;
             max-width: 600px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1; /* Ensure it appears above the image */
         }
 
         h1 {
@@ -38,18 +41,42 @@
         p {
             font-size: 1.2em;
             line-height: 1.6;
+            margin-bottom: 20px;
         }
 
         .footer {
-            margin-top: 30px;
             font-size: 1.2em;
             color: #4a773c;
         }
 
         .plant-image {
-            width: 100px;
-            height: auto;
-            margin-bottom: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: contain; /* Maintain aspect ratio and fit within viewport */
+            display: none; /* Hide image initially */
+            z-index: 100; /* Ensure it appears above other content */
+        }
+
+        .reveal-button {
+            position: fixed;
+            bottom: 20px; /* Position at the bottom of the page */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4a773c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 200; /* Ensure button is clickable above all content */
+        }
+
+        .reveal-button:hover {
+            background-color: #356c36;
         }
 
         @media (max-width: 768px) {
@@ -70,16 +97,27 @@
 <body>
     <div class="container">
         <div class="message-box">
-            <img src="https://example.com/your-plant-image.png" alt="Plant Decoration" class="plant-image">
-            <h1>Happy Birthday, [Her Name]!</h1>
-            <p>Wishing you a day filled with joy, laughter, and lots of green! 🌿🎉</p>
-            <p>May your year ahead be as vibrant and beautiful as a garden in full bloom. Thank you for being such a wonderful friend and bringing so much positivity into my life.</p>
-            <p>Enjoy your special day to the fullest!</p>
+            <h1>Joyeux Anniversaire !</h1>
+            <p>J'espère que tu vas bien. J'aurais aimé te faire une vidéo comme la tienne, mais je ne pourrais jamais être aussi stylé que toi, donc je me contenterai de t'écrire.</p>
+            <p>On ne se parle peut-être plus aussi souvent (et ce n'est pas parce que tu m'as bloqué cette fois, heureusement 😂), mais tu es vraiment l'une des meilleures personnes que je connaisse.</p>
+            <p>Je me rappelle encore de l'époque où nous voulions tous les deux avoir les meilleures notes au CEM ! À l'époque, je pensais être le meilleur 😂, mais maintenant, avec du recul, je vois ta force, ta résilience et ta détermination et je me dis que j'aimerais être comme toi !</p>
+            <p>Je te souhaite un joyeux anniversaire plein de surprises et de bonnes choses, comme tu le mérites ! J'espère que cette année t'apportera réussite, santé, bonheur, espoir, joie, satisfaction, et que les bonnes personnes croiseront ton chemin !</p>
+            <p>Peut-être pas spécialement aujourd'hui, vu que tu as apparemment le Covid 😅</p>
+            <p>Bon rétablissement À toi et ta sœur et à bientôt sur Paris !</p>
             <div class="footer">
-                <p>With love,</p>
-                <p>[Your Name]</p>
+                <p>Avec toute mon affection,</p>
+                <p>Akli</p>
             </div>
         </div>
     </div>
+    <button class="reveal-button" onclick="revealImage()">Petit cadeau ;)</button>
+    <!-- Full-screen image -->
+    <img src="images/cam.JPG" alt="Plant Decoration" class="plant-image" id="specialImage">
+    <script>
+        function revealImage() {
+            var img = document.getElementById('specialImage');
+            img.style.display = 'block'; // Show the image
+        }
+    </script>
 </body>
 </html>
