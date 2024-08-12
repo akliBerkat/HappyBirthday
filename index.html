@@ -11,14 +11,14 @@
             background: linear-gradient(to bottom, #f0f8f4, #d3e4c7);
             color: #333;
             text-align: center;
-            overflow: hidden;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: calc(100vh - 60px); /* Adjust for button height */
+            min-height: 100vh;
             padding: 20px;
             box-sizing: border-box;
         }
@@ -32,7 +32,7 @@
             position: relative;
             z-index: 1;
             box-sizing: border-box;
-            margin: 0 10px;
+            margin: 20px auto;
         }
 
         h1 {
@@ -65,7 +65,7 @@
 
         .reveal-button {
             position: fixed;
-            bottom: 10px; /* Position closer to the bottom on mobile */
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             background-color: #4a773c;
@@ -98,7 +98,7 @@
             .reveal-button {
                 padding: 8px 16px;
                 font-size: 0.9em;
-                bottom: 5px;
+                bottom: 10px;
             }
         }
     </style>
@@ -112,10 +112,10 @@
             <p>Je me rappelle encore de l'époque où nous voulions tous les deux avoir les meilleures notes au CEM ! À l'époque, je pensais être le meilleur 😂, mais maintenant, avec du recul, je vois ta force, ta résilience et ta détermination et je me dis que j'aimerais être comme toi !</p>
             <p>Je te souhaite un joyeux anniversaire plein de surprises et de bonnes choses, comme tu le mérites ! J'espère que cette année t'apportera réussite, santé, bonheur, espoir, joie, satisfaction, et que les bonnes personnes croiseront ton chemin !</p>
             <p>Peut-être pas spécialement aujourd'hui, vu que tu as apparemment le Covid 😅</p>
-            <p>Bon rétablissement À toi et ta sœur et à bientôt sur Paris !</p>
+            <p>Bon rétablissement À toi et ta sœur et à bientôt sur Paris ! 🖤</p>
             <div class="footer">
                 <p>Avec toute mon affection,</p>
-                <p>Akli</p>
+                <p>[Votre Nom]</p>
             </div>
         </div>
     </div>
@@ -124,7 +124,8 @@
     <script>
         function revealImage() {
             var img = document.getElementById('specialImage');
-            img.style.display = 'block'; // Show the image
+            img.style.display = 'block';
+            document.body.style.overflow = 'hidden'; /* Disable scrolling when the image is visible */
         }
     </script>
 </body>
