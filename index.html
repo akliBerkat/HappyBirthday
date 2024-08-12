@@ -3,10 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Page</title>
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #f0f8f4, #d3e4c7);
+            color: #333;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .message-box {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #4a773c;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 1.2em;
+            color: #4a773c;
+        }
+
+        .plant-image {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .message-box {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            p {
+                font-size: 1em;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, GitHub Pages!</h1>
-    <p>Welcome to my webpage hosted on GitHub Pages.</p>
+    <div class="container">
+        <div class="message-box">
+            <img src="https://example.com/your-plant-image.png" alt="Plant Decoration" class="plant-image">
+            <h1>Happy Birthday, [Her Name]!</h1>
+            <p>Wishing you a day filled with joy, laughter, and lots of green! 🌿🎉</p>
+            <p>May your year ahead be as vibrant and beautiful as a garden in full bloom. Thank you for being such a wonderful friend and bringing so much positivity into my life.</p>
+            <p>Enjoy your special day to the fullest!</p>
+            <div class="footer">
+                <p>With love,</p>
+                <p>[Your Name]</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
